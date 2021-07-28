@@ -161,7 +161,7 @@
 
           setInterval(updateClock(), 1000);
           //start up music
-          var audio = new Audio('http://www.winhistory.de/more/winstart/ogg/win98.ogg');
+          var audio = new Audio('https://www.winhistory.de/more/winstart/ogg/win98.ogg');
           //audio.play();
           // toggle start menu 
           $("#startbutton").click(function () {
