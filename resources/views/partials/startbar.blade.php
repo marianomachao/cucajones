@@ -68,7 +68,7 @@
           ?>
           </ul>
         </li>
-        <li class="item more" data-icon="img/icon/cd_audio_cd_mcloiq.png">
+        <li class="item more" data-icon="/img/icon/bandcamp-icon.ico">
           Bandcamp
           <ul class="dropdown-content">
           <?php
