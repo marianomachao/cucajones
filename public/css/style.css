@@ -343,7 +343,7 @@
   margin: 5px;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) { */
 
   a.launch.desktop-icon {
     font-size: 12px;
@@ -354,4 +354,4 @@
     max-width: 100%;
   }
 
-}
+/* } */
