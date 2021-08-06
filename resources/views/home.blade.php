@@ -13,7 +13,7 @@
             <?php
             foreach ($items as $key => $item) {
             ?>
-                <div class="col-md-3 col-sm-4">
+                <div class="col-6 col-md-3 col-sm-4">
                   <a href="#"
                     class="launch desktop-icon"
                     data-launch="item-<?=$item->id ?>"

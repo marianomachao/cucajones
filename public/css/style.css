@@ -342,3 +342,16 @@
   height: 64px;
   margin: 5px;
 }
+
+@media (max-width: 600px) {
+
+  a.launch.desktop-icon {
+    font-size: 12px;
+    background-color: hsl(0deg 0% 0% / 15%);
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    max-width: 100%;
+  }
+
+}
