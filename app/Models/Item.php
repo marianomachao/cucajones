@@ -34,10 +34,8 @@ class Item extends Model implements HasMedia {
     protected $appends = ['resource_url'];
 
     public function registerMediaCollections() {
-        $this->addMediaCollection('gallery')
-        ->singleFile();;
+        $this->addMediaCollection('gallery');
     }
-
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute()
