@@ -76,4 +76,7 @@
     </div>
 </div>
 
-
+@include('brackets/admin-ui::admin.includes.media-uploader', [
+    'mediaCollection' => app(App\Models\Items::class)->getMediaCollection('gallery'),
+    'label' => 'Gallery'
+])
