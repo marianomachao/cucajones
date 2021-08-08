@@ -15,7 +15,7 @@
             ?>
 
                 <!--
-                print_r($item);
+                <?php print_r($item); ?>
                 -->
                 <div class="col-6 col-md-3 col-sm-4">
                   <a href="#"
