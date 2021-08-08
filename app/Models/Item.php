@@ -14,10 +14,6 @@ class Item extends Model implements HasMedia {
     use AutoProcessMediaTrait;
     use HasMediaCollectionsTrait;
 
-    public function registerMediaCollections() {
-        $this->addMediaCollection('gallery');
-    }
-
     protected $fillable = [
         'type',
         'active',
@@ -37,7 +33,7 @@ class Item extends Model implements HasMedia {
     
     protected $appends = ['resource_url'];
 
-    public function registerMediaCollections(): void {
+    public function registerMediaCollections() {
         $this->addMediaCollection('gallery');
     }
 
