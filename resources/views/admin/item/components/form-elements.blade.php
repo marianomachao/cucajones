@@ -56,7 +56,7 @@
 <!-- HTML Embed -->
 <div class="form-group row align-items-center"
     :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }" 
-    v-if="form.type == 'spotify' || form.type == 'bandcamp' || form.type == 'tweet' || form.type == 'youtube'"
+    v-if="form.type == 'youtube'"
 >
     <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Link</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
@@ -64,5 +64,17 @@
         <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('text') }}</div>
     </div>
 </div>
+
+<div class="form-group row align-items-center"
+    :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }" 
+    v-if="form.type == 'tweet' || form.type == 'bandcamp' || form.type == 'spotify' "
+>
+    <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">HTML Embed Code</label>
+        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <textarea v-model="form.text" class="form-control" v-validate="'required'" id="text" name="text" style="font-family: courier;"></textarea>
+        <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('text') }}</div>
+    </div>
+</div>
+
 
 

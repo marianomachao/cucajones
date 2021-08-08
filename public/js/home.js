@@ -44,10 +44,19 @@
         var getWindowsSizeByType = function(type) {
             switch(type) {
                 case 'youtube':
-                    return [560, 315];
+                    return [590, 370];
+                    break;
+                case 'bandcamp':
+                    return [370, 470];
+                    break;
+                case 'spotify':
+                    return [350, 350];
+                    break;
+                case 'tweet':
+                    return [400, 270];
                     break;
                 default:
-                    return [300, 300];
+                    return [350, 350];
                     break;
             }
         };

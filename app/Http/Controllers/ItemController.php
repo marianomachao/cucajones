@@ -47,9 +47,8 @@ class ItemController extends Controller
 
 	private function renderYoutube($text)
 	{
-		$html = '<div class="embed-responsive embed-responsive-16by9">';
-		$html .= '<iframe width="560" height="315" frameborder="0" class="embed-responsive-item" src="' . $text . '" allowfullscreen></iframe>';
-		$html .= '</div>';
-		return $html;
+		return view('items.youtube', [
+			'link' => $text
+		]);
 	}
 }
