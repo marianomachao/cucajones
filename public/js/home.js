@@ -41,8 +41,19 @@
           $("#" + id).css('z-index', getTopZIndex() + 1);
         };
 
+        var getWindowsSizeByType = function(type) {
+            switch(type) {
+                case 'youtube':
+                    return [560, 315];
+                    break;
+                default:
+                    return [300, 300];
+                    break;
+            }
+        };
+
         //Dynamically create start bar button and unhide program window already loaded in dom 
-        var createProgram = function (id, title, imgUrl, url) {
+        var createProgram = function (id, title, imgUrl, url, type) {
           $("#startbutton").after("<span class='program' id='start-bar-" + id + "' >" + title + "</span>");
           $("#start-bar-" + id).css('background-image', 'url(' + imgUrl + ')');
           var content = '<div class="window ui-widget" id="' + id + '">' +
@@ -70,9 +81,14 @@
             minHeight: 250,
             minWidth: 350 });
 
+          
+          var sizes = getWindowsSizeByType(type);
           // Prevent windows from moving on sibling being resized or closed
           $(".window").css({
-            position: "absolute" });
+            position: "absolute",
+            width: sizes[0],
+            height: sizes[1]
+          });
 
           openWindow(id);
         };
@@ -252,8 +268,9 @@
             var title = $(this).data("title");
             var imgUrl = $(this).data("icon");
             var url = $(this).data("url");
+            var type = $(this).data('type');
             if (!isWindowOpen(targetId)) {
-              createProgram(targetId, title, imgUrl, url);
+              createProgram(targetId, title, imgUrl, url, type);
               $('#menu').hide();
               $("#startbutton").removeClass("startbutton-on");
             } else {

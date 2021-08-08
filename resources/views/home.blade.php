@@ -20,6 +20,7 @@
                     data-title="<?=$item->title ?>"
                     data-icon="/img/icon/<?=$item->type ?>-icon.ico"
                     data-url="/item/<?=$item->id ?>"
+                    data-type="<?=$item->type ?>"
                     align="center"
                   >
                     <img class="item-icon" src="/img/icon/<?=$item->type ?>-icon.ico" /><br />
