@@ -57,6 +57,10 @@ class ItemController extends Controller
 	private function renderImage(Item $item)
 	{
 		$mediaItems = $item->getMedia('gallery');
+
+		echo 'aver';
+		print_r($mediaItems);
+
 		$publicUrl = $mediaItems[0]->getUrl();
 
 		return '<img src="' . $publicUrl . '">';
