@@ -13,10 +13,6 @@
             <?php
             foreach ($items as $key => $item) {
             ?>
-
-                <!--
-                <?php print_r($item); ?>
-                -->
                 <div class="col-6 col-md-3 col-sm-4">
                   <a href="#"
                     class="launch desktop-icon"
