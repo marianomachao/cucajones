@@ -26,7 +26,7 @@ class ItemController extends Controller
     		case 'texto':
     			$html = $this->renderText($item->text);
     			break;
-			case 'image':
+			case 'imagen':
 				$html = $this->renderImage($item);
 				break;
     		default:
