@@ -47,13 +47,13 @@
                     return [590, 370];
                     break;
                 case 'bandcamp':
-                    return [370, 470];
+                    return [380, 520];
                     break;
                 case 'spotify':
-                    return [350, 350];
+                    return [350, 450];
                     break;
                 case 'tweet':
-                    return [400, 270];
+                    return [400, 290];
                     break;
                 default:
                     return [350, 350];
