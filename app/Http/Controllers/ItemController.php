@@ -16,6 +16,8 @@ class ItemController extends Controller
     	$html = '';
     	switch ($item->type) {
     		case 'youtube':
+				$html = $this->renderYoutube($item->text);
+				break;
     		case 'spotify':
     		case 'bandcamp':
     		case 'tweet':
@@ -42,4 +44,12 @@ class ItemController extends Controller
     {
         return $text;
     }
+
+	private function renderYoutube($text)
+	{
+		$html = '<div class="embed-responsive embed-responsive-16by9">';
+		$html .= '<iframe class="embed-responsive-item" src="' . $text . '" allowfullscreen></iframe>';
+		$html .= '</div>';
+		return $html;
+	}
 }
