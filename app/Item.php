@@ -6,12 +6,14 @@ use Brackets\Media\HasMedia\AutoProcessMediaTrait;
 use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 
-class Item extends Model implements HasMedia {
-
+class Item extends Model implements HasMedia
+{
     use ProcessMediaTrait;
     use AutoProcessMediaTrait;
     use HasMediaCollectionsTrait;
 
-    public function registerMediaCollections() {
+    public function registerMediaCollections()
+    {
         $this->addMediaCollection('gallery');
     }
+}
