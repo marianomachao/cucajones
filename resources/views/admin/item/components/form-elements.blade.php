@@ -43,7 +43,8 @@
 </div> -->
 
 <!-- WYSIWYG para texto -->
-<div class="form-group row align-items-center" :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }" v-if="form.type == 'texto' || form.type == 'imagen'">
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }"
+    v-if="form.type == 'texto'">
     <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.item.columns.text') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <div>
@@ -76,7 +77,27 @@
     </div>
 </div>
 
-@include('brackets/admin-ui::admin.includes.media-uploader', [
-    'mediaCollection' => app(App\Models\Item::class)->getMediaCollection('gallery'),
-    'label' => 'Gallery'
-])
+<div class="form-group row align-items-center"
+    :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }" 
+    v-if="form.type == 'imagen'"
+>
+    <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Imagen</label>
+        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <input type="hidden" name="image" id="image">
+        <input type="file" onchange="encodeImageFileAsURL(this)">
+        <!-- <textarea v-model="form.text" class="form-control" v-validate="'required'" id="text" name="text" style="font-family: courier;"></textarea> -->
+        <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('image') }}</div>
+    </div>
+</div>
+
+<script>
+function encodeImageFileAsURL(element) {
+  var file = element.files[0];
+  var reader = new FileReader();
+  reader.onloadend = function() {
+    console.log('RESULT', reader.result)
+    document.getElementById('image').value = reader.result;
+  }
+  reader.readAsDataURL(file);
+}
+</script>

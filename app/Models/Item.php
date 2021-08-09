@@ -3,16 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Brackets\Media\HasMedia\ProcessMediaTrait;
-use Brackets\Media\HasMedia\AutoProcessMediaTrait;
-use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
 
-class Item extends Model implements HasMedia {
+class Item extends Model {
 
-    use ProcessMediaTrait;
-    use AutoProcessMediaTrait;
-    use HasMediaCollectionsTrait;
 
     protected $fillable = [
         'type',
@@ -33,9 +26,6 @@ class Item extends Model implements HasMedia {
     
     protected $appends = ['resource_url'];
 
-    public function registerMediaCollections() {
-        $this->addMediaCollection('gallery');
-    }
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute()
