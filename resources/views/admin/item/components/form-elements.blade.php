@@ -100,7 +100,7 @@
         reader.onloadend = function() {
             console.log('RESULT', reader.result)
             document.getElementById('image').value = reader.result;
-            document.getElementById('preview-image').src = 'data:image/jpeg;charset=utf-8;base64, ' + reader.result;
+            document.getElementById('preview-image').src = reader.result;
             document.getElementById('preview-image').style.display = 'block';
         }
         reader.readAsDataURL(file);
