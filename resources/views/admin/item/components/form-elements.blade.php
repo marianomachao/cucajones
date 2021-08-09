@@ -84,11 +84,25 @@
     <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Imagen</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <input type="hidden" name="image" id="image">
-        <input type="file" v-on:change="encodeImageFileAsURL(this)">
+        <input type="file" onchange="encodeImageFileAsURL(this)">
         <!-- <textarea v-model="form.text" class="form-control" v-validate="'required'" id="text" name="text" style="font-family: courier;"></textarea> -->
         <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('image') }}</div>
-        <div v-if="image != ''">
-            <img :src="imageSrc" class="img-thumbnail">
+        <div>
+            <img id="preview-image" class="img-thumbnail" style="display:none">
         </div>
     </div>
 </div>
+
+<script>
+    let encodeImageFileAsURL = function(element) {
+        let file = element.files[0];
+        let reader = new FileReader();
+        reader.onloadend = function() {
+            console.log('RESULT', reader.result)
+            document.getElementById('image').value = reader.result;
+            document.getElementById('preview-image').src = 'data:image/jpg;base64,' + reader.result;
+            document.getElementById('preview-image').style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+    }
+</script>
