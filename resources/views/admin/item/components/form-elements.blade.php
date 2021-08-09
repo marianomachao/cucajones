@@ -44,7 +44,7 @@
 
 <!-- WYSIWYG para texto -->
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }"
-    v-if="form.type == 'texto' || form.type == 'imagen">
+    v-if="form.type == 'texto' || form.type == 'imagen'">
     <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.item.columns.text') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <div>
