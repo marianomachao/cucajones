@@ -83,12 +83,12 @@
 >
     <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Imagen</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="hidden" name="image" id="image">
+        <input type="hidden" name="image" id="image" v-model="form.image">
         <input type="file" onchange="encodeImageFileAsURL(this)">
         <!-- <textarea v-model="form.text" class="form-control" v-validate="'required'" id="text" name="text" style="font-family: courier;"></textarea> -->
         <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('image') }}</div>
         <div>
-            <img id="preview-image" class="img-fluid" style="display:none">
+            <img id="preview-image" style="max-height: 300px: max-width:300px" class="m-2 img-fluid" style="display:none">
         </div>
     </div>
 </div>
