@@ -10,7 +10,7 @@ use Brackets\Media\HasMedia\HasMediaCollections;
 use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
 use Brackets\Media\HasMedia\HasMediaThumbsTrait;
 
-class Item extends Model implements HasMediaCollections, HasMediaConversions {
+class Item extends Model implements HasMediaCollectionsTrait, HasMediaConversions {
 
     use HasMediaCollectionsTrait;
     use HasMediaThumbsTrait;
