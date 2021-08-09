@@ -1,4 +1,4 @@
-<div class="embed-responsive embed-responsive-16by9">';
+<div class="embed-responsive embed-responsive-16by9">
     <iframe
         width="560"
         height="315"
