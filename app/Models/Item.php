@@ -26,11 +26,6 @@ class Item extends Model {
     protected $appends = ['resource_url'];
 
 
-    // public function registerMediaConversions(Media $media = null)
-    // {
-    //     $this->autoRegisterThumb200();
-    // }
-
     /* ************************ ACCESSOR ************************* */
 
     public function getResourceUrlAttribute()

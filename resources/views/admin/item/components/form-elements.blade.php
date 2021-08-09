@@ -34,15 +34,8 @@
     </div>
 </div>
 
-<!-- <div class="form-group row align-items-center" :class="{'has-danger': errors.has('url'), 'has-success': this.fields.url && this.fields.url.valid }" v-if="form.type == 'youtube'">
-    <label for="url" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.item.columns.url') }}</label>
-        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.url" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('url'), 'form-control-success': this.fields.url && this.fields.url.valid}" id="url" name="url" placeholder="{{ trans('admin.item.columns.url') }}">
-        <div v-if="errors.has('url')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('url') }}</div>
-    </div>
-</div> -->
 
-<!-- WYSIWYG para texto -->
+<!-- WYSIWYG para texto e imagen-->
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }"
     v-if="form.type == 'texto' || form.type == 'imagen'">
     <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.item.columns.text') }}</label>
@@ -76,32 +69,3 @@
         <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('text') }}</div>
     </div>
 </div>
-
-<!-- <div class="form-group row align-items-center"
-    :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }" 
-    v-if="form.type == 'imagen'"
->
-    <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Imagen</label>
-        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="hidden" name="image" id="image" v-model="form.image">
-        <input type="file" onchange="encodeImageFileAsURL(this)">
-        <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('image') }}</div>
-        <div>
-            <img id="preview-image" style="max-height: 300px: max-width:300px" class="m-2 img-fluid" style="display:none">
-        </div>
-    </div>
-</div> -->
-
-<!-- <script>
-    let encodeImageFileAsURL = function(element) {
-        let file = element.files[0];
-        let reader = new FileReader();
-        reader.onloadend = function() {
-            console.log('RESULT', reader.result)
-            document.getElementById('image').value = reader.result;
-            document.getElementById('preview-image').src = reader.result;
-            document.getElementById('preview-image').style.display = 'block';
-        }
-        reader.readAsDataURL(file);
-    }
-</script> -->

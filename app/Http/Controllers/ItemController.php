@@ -24,11 +24,9 @@ class ItemController extends Controller
     			$html = $this->renderEmbed($item->text);
     			break;
     		case 'texto':
+			case 'imagen':
     			$html = $this->renderText($item->text);
     			break;
-			case 'imagen':
-				$html = $this->renderImage($item);
-				break;
     		default:
     			# code...
     			break;
@@ -52,10 +50,5 @@ class ItemController extends Controller
 		return view('items.youtube', [
 			'link' => $text
 		]);
-	}
-
-	private function renderImage($item)
-	{
-		return '<img src="' . $item->image . '">';
 	}
 }
