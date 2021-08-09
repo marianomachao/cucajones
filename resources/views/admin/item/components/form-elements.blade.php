@@ -77,7 +77,7 @@
     </div>
 </div>
 
-<div class="form-group row align-items-center"
+<!-- <div class="form-group row align-items-center"
     :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }" 
     v-if="form.type == 'imagen'"
 >
@@ -85,15 +85,20 @@
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <input type="hidden" name="image" id="image" v-model="form.image">
         <input type="file" onchange="encodeImageFileAsURL(this)">
-        <!-- <textarea v-model="form.text" class="form-control" v-validate="'required'" id="text" name="text" style="font-family: courier;"></textarea> -->
         <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('image') }}</div>
         <div>
             <img id="preview-image" style="max-height: 300px: max-width:300px" class="m-2 img-fluid" style="display:none">
         </div>
     </div>
-</div>
+</div> -->
 
-<script>
+@include('brackets/admin-ui::admin.includes.media-uploader', [
+            'mediaCollection' => app(App\Models\Item::class)->getMediaCollection('gallery'),
+            'media' => $item->getThumbs200ForCollection('gallery'),
+            'label' => 'Gallery'
+        ])
+
+<!-- <script>
     let encodeImageFileAsURL = function(element) {
         let file = element.files[0];
         let reader = new FileReader();
@@ -105,4 +110,4 @@
         }
         reader.readAsDataURL(file);
     }
-</script>
+</script> -->

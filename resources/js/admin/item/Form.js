@@ -11,7 +11,9 @@ Vue.component('item-form', {
                 url:  '' ,
                 text:  '',
                 image: ''
-            }
+            },
+            mediaCollections: ['gallery']
         }
-    }
+    },
+    
 });
