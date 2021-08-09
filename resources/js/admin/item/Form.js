@@ -11,8 +11,24 @@ Vue.component('item-form', {
                 url:  '' ,
                 text:  '',
                 image: ''
+            },
+            image: ''
+        }
+    },
+    computed: {
+        imageSrc: () => {
+            return 'data:image/jpg;base64,' + this.image;
+        }
+    },
+    methods: {
+        encodeImageFileAsURL: function(element) {
+            let file = element.files[0];
+            let reader = new FileReader();
+            reader.onloadend = function() {
+              console.log('RESULT', reader.result)
+              this.image = reader.result;
             }
+            reader.readAsDataURL(file);
         }
     }
-
 });
