@@ -59,7 +59,8 @@ class WysiwygMediaUploadController extends BaseController {
             'file' => Storage::disk(env('FILESYSTEM_CLOUD'))->url('wysiwyg/'.$file_name), //url($savedPath),
             'mediaId' => $wysiwygMedia->id,
             'success' => true,
-            'custom'=>true
+            'custom'=>true,
+            'cae_aca' => true
         ]);
     }
 }
