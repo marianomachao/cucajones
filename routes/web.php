@@ -44,3 +44,9 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::post('/admin/items/{item}',                          'Admin\ItemsController@update')->name('admin/items/update');
     Route::delete('/admin/items/{item}',                        'Admin\ItemsController@destroy')->name('admin/items/destroy');
 });
+
+Route::middleware(['web', 'admin'])->group(function () {
+    Route::prefix('admin')->namespace('Admin')->name('admin/')->group(static function() {
+        Route::post('/wysiwyg-media','WysiwygMediaUploadController@upload')->name('wysiwyg-upload');
+    });
+});

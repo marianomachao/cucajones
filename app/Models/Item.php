@@ -3,18 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-// use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
-use Spatie\MediaLibrary\Media;
 
-use Brackets\Media\HasMedia\HasMediaCollections;
-use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
-use Brackets\Media\HasMedia\HasMediaThumbsTrait;
-
-class Item extends Model implements HasMediaCollectionsTrait {
-
-    use HasMediaCollectionsTrait;
-    use HasMediaThumbsTrait;
-    
+class Item extends Model {
 
     protected $fillable = [
         'type',
@@ -35,11 +25,6 @@ class Item extends Model implements HasMediaCollectionsTrait {
     
     protected $appends = ['resource_url'];
 
-    public function registerMediaCollections()
-    {
-        $this->addMediaCollection('gallery')
-             ->accepts('image/*');
-    }
 
     // public function registerMediaConversions(Media $media = null)
     // {

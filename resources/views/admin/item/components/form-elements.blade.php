@@ -44,7 +44,7 @@
 
 <!-- WYSIWYG para texto -->
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('text'), 'has-success': this.fields.text && this.fields.text.valid }"
-    v-if="form.type == 'texto'">
+    v-if="form.type == 'texto' || form.type == 'imagen">
     <label for="text" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.item.columns.text') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <div>
@@ -91,12 +91,6 @@
         </div>
     </div>
 </div> -->
-
-@include('brackets/admin-ui::admin.includes.media-uploader', [
-            'mediaCollection' => app(App\Models\Item::class)->getMediaCollection('gallery'),
-            'media' => $item->getThumbs200ForCollection('gallery'),
-            'label' => 'Gallery'
-        ])
 
 <!-- <script>
     let encodeImageFileAsURL = function(element) {
