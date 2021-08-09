@@ -88,7 +88,7 @@
         <!-- <textarea v-model="form.text" class="form-control" v-validate="'required'" id="text" name="text" style="font-family: courier;"></textarea> -->
         <div v-if="errors.has('text')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('image') }}</div>
         <div>
-            <img id="preview-image" class="img-thumbnail" style="display:none">
+            <img id="preview-image" class="img-fluid" style="display:none">
         </div>
     </div>
 </div>
@@ -100,7 +100,7 @@
         reader.onloadend = function() {
             console.log('RESULT', reader.result)
             document.getElementById('image').value = reader.result;
-            document.getElementById('preview-image').src = 'data:image/jpg;base64,' + reader.result;
+            document.getElementById('preview-image').src = 'data:image/jpeg;charset=utf-8;base64, ' + reader.result;
             document.getElementById('preview-image').style.display = 'block';
         }
         reader.readAsDataURL(file);
